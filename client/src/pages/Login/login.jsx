@@ -14,7 +14,7 @@ const Login = () => {
       password.toLowerCase() === "admin"
     ) {
       setIsAuthenticated(true);
-      app.setToken(isAuthenticated);
+      app.setToken("sdklhafkjlsdhafsdjfhvskgksdklhafkjlsdhafsdjfhvskgk");
     }
   };
 

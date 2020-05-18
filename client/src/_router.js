@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Home from "./pages/home";
-import Login from "./pages/Login/login";
+import Login from "./pages/Login";
 import app from "./Appbasic";
+import Home from './pages/Home';
 
 const Content = () => (
   <div className="container">

@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn({ handleInput, handleAuthentication }) {
+export default function SignIn({ handleInput, handleAuthentication,errorMessage }) {
   const classes = useStyles();
 
   return (
@@ -71,6 +71,7 @@ export default function SignIn({ handleInput, handleAuthentication }) {
             autoFocus
             onChange={handleInput}
           />
+          <Typography variant="body2" color="error">{errorMessage.username}</Typography>
           <TextField
             variant="outlined"
             margin="normal"
@@ -83,6 +84,7 @@ export default function SignIn({ handleInput, handleAuthentication }) {
             autoComplete="current-password"
             onChange={handleInput}
           />
+          <Typography variant="body2" color="error">{errorMessage.password}</Typography>
           <Button
             type="submit"
             fullWidth

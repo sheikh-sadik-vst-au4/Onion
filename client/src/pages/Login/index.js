@@ -5,10 +5,22 @@ import LoginForm from './component/LoginForm';
 import app from '../../Appbasic';
 
 class LoginContainer extends Component {
-    state = { username: "", password: "", isAuthenticated: false }
+    state = {
+        username: "", password: "", isAuthenticated: false, error: {
+            username: "",
+            password: ""
+        }
+    }
 
     handleAuthentication = (event) => {
+
         event.preventDefault();
+      
+        const error = {
+            username: "*incorrect username*",
+            password: "*incorrect password*"
+        }
+      
         if (
             this.state.username.toLowerCase() === "admin" &&
             this.state.password.toLowerCase() === "admin"
@@ -17,6 +29,12 @@ class LoginContainer extends Component {
                 isAuthenticated: true
             })
             app.setToken("sdklhafkjlsdhafsdjfhvskgksdklhafkjlsdhafsdjfhvskgk");
+        }
+        else {
+            this.setState({
+                error: error
+            })
+
         }
     };
 
@@ -34,6 +52,7 @@ class LoginContainer extends Component {
             return <LoginForm
                 handleInput={this.handleInput}
                 handleAuthentication={this.handleAuthentication}
+                errorMessage={this.state.error}
             />
 
         }

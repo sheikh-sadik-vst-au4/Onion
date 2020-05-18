@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignIn({ handleInput, handleAuthentication }) {
   const classes = useStyles();
 
   return (
@@ -58,7 +58,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Admin Sign in
         </Typography>
-        <form className={classes.form} Validate>
+        <form className={classes.form} validate="true">
           <TextField
             variant="outlined"
             margin="normal"
@@ -69,6 +69,7 @@ export default function SignIn() {
             name="username"
             autoComplete="email"
             autoFocus
+            onChange={handleInput}
           />
           <TextField
             variant="outlined"
@@ -80,6 +81,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleInput}
           />
           <Button
             type="submit"
@@ -87,6 +89,7 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleAuthentication}
           >
             Sign In
           </Button>

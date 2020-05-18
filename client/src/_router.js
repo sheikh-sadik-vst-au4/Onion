@@ -5,7 +5,7 @@ import app from "./Appbasic";
 import Home from './pages/Home';
 
 const Content = () => (
-  <div className="container">
+  <div>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Login} />

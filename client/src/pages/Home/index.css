@@ -1,0 +1,23 @@
+.content { 
+    flex-grow: 1;
+    height: 100vh;
+    overflow: auto;
+}
+.root {
+    display: flex;
+}
+
+.fixedHeightPaper{
+    height: 450px;
+}
+
+.appBarSpacer{
+    min-height: 64px;
+}
+
+.container { 
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}

@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -63,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const Header = ({ open, handleDrawerOpen }) => {
+const Header = ({ open, handleDrawerOpen, handleLogout }) => {
     const classes = useStyles();
     return (
         <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
@@ -80,12 +82,11 @@ const Header = ({ open, handleDrawerOpen }) => {
                 <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                     Goddaam
           </Typography>
-                <IconButton color="inherit">
-                    <Typography variant="subtitle1" color="inherit" noWrap className={classes.title}>
-                        username
-          </Typography>
-                </IconButton>
-
+                <Link to="/logout" style={{ color: "inherit" }}>
+                    <IconButton color="inherit">
+                        <ExitToAppIcon></ExitToAppIcon>
+                    </IconButton>
+                </Link>
             </Toolbar>
         </AppBar>
     );

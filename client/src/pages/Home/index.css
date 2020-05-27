@@ -15,9 +15,13 @@
     min-height: 64px;
 }
 
-.container { 
+.main-wrapper { 
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 32px;
     padding-bottom: 32px;
+}
+
+.paper-wrapper{
+    padding: 24px;
 }

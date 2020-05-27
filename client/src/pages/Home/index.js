@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Container, Box, Grid, Paper } from '@material-ui/core'
+import { Container, Box, Grid, Paper, Typography } from '@material-ui/core'
 import { Redirect } from 'react-router-dom';
 
 import Copyright from '../../component/AppFooter'
@@ -8,6 +8,7 @@ import Header from '../../component/AppHeader';
 import Sidebar from '../../component/AppSidebar';
 import app from '../../Appbasic';
 import './index.css'
+import  AddFramer from '../../pages/AddFarmer';
 
 class Dashboard extends Component {
     state = {
@@ -37,13 +38,11 @@ class Dashboard extends Component {
                 <Sidebar handleDrawerClose={this.handleDrawerClose} open={this.state.open} />
                 <main className="content">
                     <div className="appBarSpacer" />
-                    <Container maxWidth="lg" className="container">
+                    <Container maxWidth="lg" className="main-wrapper">
                         <Grid container spacing={3}>
 
                             <Grid item xs={12} md={12} lg={12}>
-                                <Paper className="fixedHeightPaper">
-
-                                </Paper>
+                             <AddFramer/>
                             </Grid>
                         </Grid><Box pt={4}>
                             <Copyright />
